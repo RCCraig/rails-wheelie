@@ -1,21 +1,23 @@
-<h1>Profiles for <%= @user.email %></h1>
-<p>Add a Group or Find a Group</p>
+<h3><%= @user.name %></h3>
+
 
 <p>
  <%= link_to 'New Group', new_group_path, class: "btn btn-success btn-lg" %>
 </p>
 
-<div class='row'>
-  <% if @user.groups.any? %>
-    <% @user.groups.each do |group| %>
+
+<% if @user.groups.any? %>
+  <% @user.groups.each do |group| %>
+  <div class='row'>
      <h4>
       <%= group.name %>
-    </h4>
-    
-    <% end %>
-  <% else %>
-   <h3>
-     You haven't joined any groups.
-   </h3>
+     </h4>
+  </div>
   <% end %>
-</div>
+<% else %>
+ <h3>
+   You haven't joined any groups.
+ </h3>
+<p>Add a Group or Find a Group</p>
+<% end %>
+
