@@ -1,2 +1,6 @@
 <h1>Profiles for <%= @user.email %></h1>
 <p>Add a Group or Find a Group</p>
+
+<p>
+ <%= link_to 'New Group', new_group_path, class: "btn btn-success btn-lg" %>
+</p>
