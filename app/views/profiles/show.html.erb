@@ -4,3 +4,18 @@
 <p>
  <%= link_to 'New Group', new_group_path, class: "btn btn-success btn-lg" %>
 </p>
+
+<div class='row'>
+  <% if @user.groups.any? %>
+    <% @user.groups.each do |group| %>
+     <h4>
+      <%= group.name %>
+    </h4>
+    
+    <% end %>
+  <% else %>
+   <h3>
+     You haven't joined any groups.
+   </h3>
+  <% end %>
+</div>
