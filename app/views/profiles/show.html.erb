@@ -1,16 +1,10 @@
 <h3><%= @user.name %></h3>
 
-
-<p>
- <%= link_to 'New Group', new_group_path, class: "btn btn-success btn-lg" %>
-</p>
-
-
 <% if @user.groups.any? %>
   <% @user.groups.each do |group| %>
   <div class='row'>
      <h4>
-      <%= group.name %>
+      <%= link_to group.name, group %>
      </h4>
   </div>
   <% end %>
@@ -20,4 +14,8 @@
  </h3>
 <p>Add a Group or Find a Group</p>
 <% end %>
+<p>
+ <%= link_to 'New Group', new_group_path, class: "btn btn-success" %>
+</p>
+
 
