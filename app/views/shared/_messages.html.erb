@@ -1,12 +1,14 @@
-<div>
-  <% if flash.keys.any? %>
-    <% flash.keys.each do |key| %>
-      <div class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %>" role="alert">
-        <a class="close" data-dismiss="alert">&#215;</a>
-        <%= flash[key] %>
-      </div>
+<div class="row">
+  <div class="col-8">
+    <% if flash.keys.any? %>
+      <% flash.keys.each do |key| %>
+        <div class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %>" role="alert">
+          <a class="close" data-dismiss="alert">&#215;</a>
+          <%= flash[key] %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 
